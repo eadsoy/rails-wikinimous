@@ -1,0 +1,17 @@
+<div>
+  <nav class="navbar navbar-light bg-light">
+    <%= link_to "Wikinimous", articles_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <%= link_to "New Article", new_article_path, class: "text-muted" %>
+    </button>
+  </nav>
+</div>
+
+<div class="container">
+  <% @articles.each do |article| %>
+    <h2>
+      <%= link_to article.title, article_path(article) %>
+    </h2>
+    <p><%= article.content %></p>
+  <% end %>
+</div>
